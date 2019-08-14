@@ -1,0 +1,23 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<h3>Transfer Money</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onTransfer()">
+    <div class="form-group">
+      <label for="lastname">From Mobile no.</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="from" name="mobile"/>
+    </div>
+    <div class="form-group">
+            <label for="lastname">To Mobile no.</label>
+            <input type="text" class="form-control" id="age" required [(ngModel)]="to" name="mobile"/>
+          </div>
+    <div class="form-group">
+            <label for="lastname">Enter Amount</label>
+            <input type="text" class="form-control" id="age" required [(ngModel)]="amount" name="mobile"/>
+          </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-danger">Transfer</button>
+    </div>
+  </form>
+</div>
+</div>

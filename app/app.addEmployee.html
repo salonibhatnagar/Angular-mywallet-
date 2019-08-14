@@ -1,0 +1,36 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+    <h3>Create Customer</h3>
+    <div style="width: 300px;">
+      <form #empform=ngForm (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Account Id:-</label>
+          <input type="text" class="form-control" id="mobile" required [(ngModel)]="account.aid" name="id"  #idcontrol="ngModel" required>
+          <small id="iHelp" class="form-text text-muted"class="alert alert-primary" role="alert" *ngIf="idcontrol.touched && idcontrol.invalid">*Id should be Filled</small>
+        </div>
+        <div class="form-group">
+          <label for="name">Mobile No:-</label>
+          <input type="text" class="form-control" id="mobile" required [(ngModel)]="account.mobile" name="mobile"  #mobilecontrol="ngModel" required>
+          <small id="mHelp" class="form-text text-muted"class="alert alert-primary" role="alert" *ngIf="mobilecontrol.touched && mobilecontrol.invalid">*Mobile should be Filled</small>
+        </div>
+        <div class="form-group">
+          <label for="name">Account Holder Name:-</label>
+          <input type="text" class="form-control" id="mobile" required [(ngModel)]="account.accountholder" name="name" #namecontrol="ngModel" required>
+          <small id="nameHelp" class="form-text text-muted" class="alert alert-primary" role="alert" *ngIf="namecontrol.touched && namecontrol.invalid">*Name should be Filled</small>
+        </div>
+    
+        <div class="form-group">
+          <label for="age">Account Balance:-</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="account.balance" name="balance"#balancecontrol="ngModel" required>
+           <small id="nameHelp" class="form-text text-muted" class="alert alert-primary" role="alert" *ngIf="balancecontrol.touched && balancecontrol.invalid">*Name should be Filled</small>
+        </div>
+    
+    
+        <button type="submit" class="btn btn-danger"  [disabled]="empform.invalid">Submit</button>
+      </form>
+    </div>
+    
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-danger" (click)="newCustomer()">Add</button>
+    </div>
+</div>

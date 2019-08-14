@@ -1,0 +1,19 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<h3>Deposit Money</h3>
+<div style="width: 300px;">
+  <form (ngSubmit)="onDeposit()">
+    <div class="form-group">
+      <label for="lastname">Mobile no</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="mobileno" name="mobile"/>
+    </div>
+    <div class="form-group">
+            <label for="lastname">Enter Amount</label>
+            <input type="text" class="form-control" id="age" required [(ngModel)]="amount" name="mobile"/>
+          </div>
+
+    <div class="btn-group">
+      <button type="submit" class="btn btn-danger">Deposit</button>
+    </div>
+  </form>
+</div>
+</div>

@@ -1,0 +1,27 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<div *ngFor="let account of accounts | async">
+        <div>
+          <label>Account Id: </label> {{account.aid}}
+        </div>
+        <div>
+          <label>Mobile No: </label> {{account.mobile}}
+        </div>
+        <div>
+          <label>Account Holder Name: </label> {{account.accountholder}}
+        </div>
+        <div>
+          <label>Account Balance: </label> {{account.balance}}
+        </div>
+      
+        <!-- <span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
+      
+        <span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span> -->
+      
+        <!-- <span class="button is-small btn-danger" (click)=' reloadData()'>Delete</span> -->
+      
+        <hr/>
+        <hr/>
+      </div>
+      </div>
+  
+      

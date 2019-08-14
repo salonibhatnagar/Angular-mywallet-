@@ -1,0 +1,97 @@
+<div style="margin-top: 2%; margin-left: auto; margin-right: auto; width:25%;">
+<h3 style="align-content: center">Find By Mobile No.</h3>
+<div style="width: 300px; ">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Mobile no</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="mobileno" name="mobile"/>
+    </div>
+
+    <div class="btn-group">
+        <button type="submit" class="btn btn-danger">Submit</button>
+      <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+      <br>
+      <br>
+    </div>
+  </form>
+</div>
+
+<br>
+<br>
+<br>
+<table class="table" border="2"><tr><th>Account No</th>
+            <th>mobile No</th>
+          <th>Account Holder</th>
+        <th>Account Balance</th>
+        <th colspan="2">Actions</th>
+      <tr *ngIf="show">   
+          <td></td>
+          <td></td>
+        <td></td>
+      <td></td>
+      <td><div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-success " style="margin-left: 20px">
+            <input type="button" name="options" id="option1" autocomplete="off"  value="Delete" (click)='onDelete()' style="margin-left: 20px">
+          </label>
+          <label class="btn btn-success" style="margin-left: 20px">
+            <input type="button" name="options" id="option2" autocomplete="off" value="Update" (click)="onUpdate()" style="margin-left: 20px" >
+          </label>
+          </div>
+        </td>
+      <tr *ngIf="show==false">
+        <td>{{accounts.aid}}</td>
+      <td>{{accounts.mobile}}</td>
+    <td>{{accounts.accountholder}}</td>
+  <td>{{accounts.balance}}</td>
+  <td><div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="button" name="options" id="option1" autocomplete="off"  value="Delete" (click)='onDelete()'>
+    </label>
+    <label class="btn btn-secondary">
+      <input type="button" name="options" id="option2" autocomplete="off" value="Update" (click)="onUpdate()" >
+    </label>
+    </div>
+  </td>
+
+  <!-- <td><input type="button" value="Delete" (click)='onDelete()'/></td>
+  <td><input type="button" value="Update" (click)="onUpdate()"/></td>
+  <td></td> -->
+</tr></table>
+
+<div *ngIf="status">
+
+    <form  #empform=ngForm (ngSubmit)="onUpdateAccount()">
+      <div class="form-group">
+        <label for="name">Account Id:-</label>
+        <input type="text" class="form-control" id="mobile" required [(ngModel)]="accounts.aid" name="id" #idcontrol="ngModel" required>
+        <small id="idHelp" class="form-text text-muted" class="alert alert-primary" role="alert" *ngIf="idcontrol.touched && idcontrol.invalid">*Id should be Filled</small>
+      </div>
+      <div class="form-group">
+        <label for="name">Mobile No:-</label>
+        <input type="text" class="form-control" id="mobile" required [(ngModel)]="accounts.mobile" name="mobile" readonly>
+      </div>
+      <div class="form-group">
+        <label for="name">Account Holder Name:-</label>
+        <input type="text" class="form-control" id="mobile" required [(ngModel)]="accounts.accountholder" name="name" #namecontrol="ngModel" required>
+        <small id="nHelp" class="form-text text-muted" class="alert alert-primary" role="alert" *ngIf="namecontrol.touched && namecontrol.invalid">*Name should be Filled</small>
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Account Balance:-</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="accounts.balance" name="balance" #balancecontrol="ngModel" required>
+        <small id="bHelp" class="form-text text-muted" class="alert alert-primary" role="alert" *ngIf="balancecontrol.touched && balancecontrol.invalid">*Balance should be Filled</small>
+      </div>
+      
+  
+      <button type="submit" class="btn btn-danger" [disabled]="empform.invalid">Update</button>
+    </form>
+  
+</div>
+
+</div>
+
+
+
+
+
+    
